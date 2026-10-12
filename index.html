@@ -17,7 +17,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.topbar{backgrou
 <header class="topbar"><div class="topinner">
  <div class="brand"><div class="logo">✦</div><div>ServeSense<small>RESTAURANT INTELLIGENCE</small></div></div>
  <nav class="nav" aria-label="Main navigation">
-  <button class="active" data-page="overview">Overview</button><button data-page="restaurants">Restaurants</button><button data-page="reviews">Reviews</button><button data-page="planning">ITPM Project</button>
+  <button class="active" data-page="overview">Overview</button><button data-page="restaurants">Restaurants</button><button data-page="reviews">Reviews</button>
  </nav>
 </div></header>
 <main class="container">
@@ -60,19 +60,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.topbar{backgrou
   <div class="card"><div class="section-head" style="margin:0 0 10px"><div><h2>Recent customer reviews</h2><p>Newest feedback appears first</p></div><span class="tag" id="reviewTag">All reviews</span></div><div id="reviewList"></div></div>
  </div>
 </section>
-<section id="page-planning" class="hidden">
- <div class="section-head"><div><h2>ITPM · ES · ASTMA</h2><p>How the three subjects work together in this project</p></div></div>
- <div class="grid2">
-  <div class="card"><h2 style="font-size:18px">ITPM — Project management</h2><p class="meta">Scope, milestones, risks and delivery tracking</p><div class="sentiment-list">
-   <div><b>Milestone 1 — Requirements</b><div class="track" style="margin-top:7px"><div class="fill positive" style="width:100%"></div></div><span class="meta">Completed · Define users, features and objectives</span></div>
-   <div><b>Milestone 2 — Prototype</b><div class="track" style="margin-top:7px"><div class="fill positive" style="width:100%"></div></div><span class="meta">Completed · Responsive interface and demo data</span></div>
-   <div><b>Milestone 3 — Testing & deployment</b><div class="track" style="margin-top:7px"><div class="fill neutral" style="width:65%"></div></div><span class="meta">In progress · Mobile checks and hosting</span></div>
-  </div></div>
-  <div class="card"><h2 style="font-size:18px">ES — Enterprise Systems</h2><p class="meta">Data and management decision support</p><ul style="padding-left:19px;line-height:1.9;font-size:14px"><li>Customer and restaurant records</li><li>Review and service-category tracking</li><li>Rating and sentiment KPIs</li><li>Complaint prioritisation</li><li>Recommendations for service improvement</li></ul><h2 style="font-size:18px;margin-top:24px">ASTMA — Social & media analytics</h2><p style="font-size:14px;line-height:1.7">Review text is classified as positive, neutral or negative using transparent keyword rules. Aggregate sentiment and rating patterns help identify recurring service issues.</p></div>
- </div>
- <div class="card" style="margin-top:16px"><h2 style="font-size:18px">Example decision-support report</h2><p style="line-height:1.7;font-size:14px">If negative feedback frequently mentions “late”, “cold” or “delay”, management should review delivery preparation and dispatch time. If positive feedback mentions “delicious” or “fresh”, preserve food quality practices. Review categories can help decide which operational area needs attention first.</p><div class="callout"><b>Project limitation:</b> Current version is a front-end academic prototype using sample data and browser-local storage. It does not connect to real restaurant platforms, payments, or a shared enterprise database.</div></div>
-</section>
-<div class="footer">ServeSense Academic Prototype · ITPM + Enterprise Systems + ASTMA · Sample data for demonstration</div>
+<div class="footer">ServeSense Academic Prototype · Restaurant Review & Service Analytics · Sample data for demonstration</div>
 </main>
 <script>
 const restaurants=[
