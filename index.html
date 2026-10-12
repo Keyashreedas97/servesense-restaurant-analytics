@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4512a">
+<title>ServeSense | Restaurant Review & Service Analytics</title>
+<style>
+:root{--orange:#f4512a;--ink:#20242b;--muted:#717782;--bg:#f6f7f9;--card:#fff;--line:#e9ebef;--green:#14845c;--red:#c83d48;--yellow:#b7791f}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.topinner{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:20px;letter-spacing:-.5px}.logo{width:38px;height:38px;border-radius:12px;background:var(--orange);display:grid;place-items:center;color:white;font-size:21px}.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:1.4px;font-weight:700}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button,.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:700;background:#f0f1f3;color:#454a52}.nav button.active,.btn.primary{background:var(--orange);color:#fff}.btn.light{background:#fff;border:1px solid var(--line)}.container{max-width:1180px;margin:26px auto;padding:0 22px 48px}.hero{background:linear-gradient(120deg,#282b33,#414650);color:white;border-radius:22px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;overflow:hidden}.eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:800;color:#ffb49f}.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.12;margin:10px 0}.hero p{color:#d7d9de;max-width:620px;line-height:1.6;margin:0}.hero-badge{background:#ffffff16;border:1px solid #ffffff2b;border-radius:16px;padding:18px;min-width:150px;text-align:center}.hero-badge strong{display:block;font-size:29px}.hero-badge span{font-size:12px;color:#e4e5e8}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 14px}.section-head h2{font-size:21px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card,.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 3px 14px #1a23300a}.kpi .label{color:var(--muted);font-size:12px;font-weight:700}.kpi .num{font-size:29px;font-weight:850;letter-spacing:-1px;margin:8px 0}.kpi .note{font-size:12px;color:var(--green)}.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.chart{display:flex;align-items:end;gap:13px;height:170px;padding:15px 4px 0}.barwrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:8px}.bar{width:min(38px,80%);min-height:3px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#ff8d6f,var(--orange));position:relative}.barwrap span{font-size:11px;color:var(--muted)}.barwrap b{font-size:11px}.sentiment-list{display:grid;gap:18px;margin-top:18px}.sent-row{display:grid;grid-template-columns:95px 1fr 38px;align-items:center;gap:10px;font-size:13px}.track{height:9px;background:#f0f1f3;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px}.positive{background:#20a477}.neutral{background:#e5a93b}.negative{background:#df5b64}.restaurant-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.restaurant{padding:0;overflow:hidden}.foodphoto{height:130px;display:grid;place-items:center;font-size:52px;background:linear-gradient(130deg,#ffe4d8,#fff3e8)}.restaurant:nth-child(2) .foodphoto{background:linear-gradient(130deg,#e2f1e7,#f5f8ed)}.restaurant:nth-child(3) .foodphoto{background:linear-gradient(130deg,#eee5ff,#fff0e5)}.restaurant .body{padding:16px}.restaurant h3{margin:0 0 6px;font-size:17px}.meta{font-size:12px;color:var(--muted)}.rating{display:inline-flex;align-items:center;gap:4px;background:#e8f7ef;color:#16744e;border-radius:7px;padding:5px 7px;font-weight:800;font-size:12px}.restrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:13px}.review-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px}.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:12px;font-weight:800;color:#515660}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #dfe2e7;border-radius:10px;background:#fff;outline:none}.field textarea{min-height:92px;resize:vertical}.stars{display:flex;gap:7px}.stars button{font-size:25px;border:0;background:none;padding:0;color:#d7d9de}.stars button.chosen{color:#f5a623}.review-item{padding:14px 0;border-bottom:1px solid var(--line)}.review-item:last-child{border-bottom:0}.review-top{display:flex;justify-content:space-between;gap:12px}.review-top strong{font-size:14px}.pill{display:inline-block;border-radius:99px;padding:5px 8px;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.4px}.pill.positive{background:#e3f7ee;color:#14734f}.pill.neutral{background:#fff3d9;color:#92620d}.pill.negative{background:#ffe7e9;color:#b42c38}.review-item p{font-size:13px;line-height:1.55;color:#535862;margin:8px 0}.review-meta{font-size:11px;color:#858a93}.two-actions{display:flex;gap:8px;flex-wrap:wrap}.hidden{display:none!important}.tag{font-size:11px;border-radius:7px;background:#f0f1f4;padding:5px 8px;color:#626772}.callout{background:#fff6ef;border:1px solid #ffdfd0;color:#78412e;padding:13px 15px;border-radius:12px;font-size:12px;line-height:1.55;margin-top:15px}.footer{text-align:center;color:#8b9099;font-size:11px;margin:30px 0 0}.empty{padding:25px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:850px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.review-layout{grid-template-columns:1fr}.restaurant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-badge{display:none}.topinner{align-items:flex-start;flex-direction:column}.nav{width:100%}.nav button{flex:1}}
+@media(max-width:520px){.container{padding:0 13px 30px;margin:17px auto}.topinner{padding:12px 14px}.hero{padding:22px 18px;border-radius:17px}.hero p{font-size:13px}.kpis{gap:9px}.kpi{padding:13px}.kpi .num{font-size:25px}.restaurant-grid{grid-template-columns:1fr}.foodphoto{height:105px}.card{padding:15px}.section-head{align-items:flex-start;flex-direction:column}.nav button{font-size:12px;padding:9px 8px}.sent-row{grid-template-columns:80px 1fr 32px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topinner">
+ <div class="brand"><div class="logo">✦</div><div>ServeSense<small>RESTAURANT INTELLIGENCE</small></div></div>
+ <nav class="nav" aria-label="Main navigation">
+  <button class="active" data-page="overview">Overview</button><button data-page="restaurants">Restaurants</button><button data-page="reviews">Reviews</button><button data-page="planning">ITPM Project</button>
+ </nav>
+</div></header>
+<main class="container">
+<section id="page-overview">
+ <div class="hero"><div><div class="eyebrow">SMART RESTAURANT REVIEW & SERVICE ANALYTICS</div><h1>Every review tells<br>you something.</h1><p>Turn customer feedback into better service. Explore restaurant ratings, understand review sentiment, and make informed enterprise decisions.</p><div class="two-actions" style="margin-top:20px"><button class="btn primary" onclick="goPage('reviews')">＋ Write a review</button><button class="btn light" onclick="goPage('restaurants')">Explore restaurants</button></div></div><div class="hero-badge"><strong id="heroCount">128</strong><span>reviews analysed</span></div></div>
+ <div class="section-head"><div><h2>Service overview</h2><p>Quick view of restaurant experience and customer feedback</p></div><span class="tag">DEMO ANALYTICS</span></div>
+ <div class="kpis">
+  <div class="kpi"><div class="label">AVERAGE RATING</div><div class="num" id="avgRating">4.3 ★</div><div class="note">Across listed restaurants</div></div>
+  <div class="kpi"><div class="label">REVIEWS ANALYSED</div><div class="num" id="reviewCount">128</div><div class="note">Sample + your submitted reviews</div></div>
+  <div class="kpi"><div class="label">POSITIVE SENTIMENT</div><div class="num" id="positivePct">72%</div><div class="note">Positive customer feedback</div></div>
+  <div class="kpi"><div class="label">OPEN COMPLAINTS</div><div class="num" id="complaintCount">8</div><div class="note" style="color:var(--yellow)">Needs management attention</div></div>
+ </div>
+ <div class="grid2" style="margin-top:16px">
+  <div class="card"><div class="section-head" style="margin:0"><div><h2>Restaurant performance</h2><p>Average rating by restaurant</p></div></div><div class="chart" id="ratingChart"></div></div>
+  <div class="card"><h2 style="font-size:18px;margin:0">Customer sentiment</h2><p class="meta">Rule-based review classification</p><div class="sentiment-list" id="sentimentBars"></div><div class="callout"><b>Decision insight:</b> Use negative reviews to prioritise service recovery; compare food, delivery and staff feedback before making changes.</div></div>
+ </div>
+ <div class="section-head"><div><h2>Popular nearby picks</h2><p>Illustrative demo restaurants — not live listings</p></div><button class="btn light" onclick="goPage('restaurants')">View all</button></div>
+ <div class="restaurant-grid" id="featuredRestaurants"></div>
+</section>
+<section id="page-restaurants" class="hidden">
+ <div class="section-head"><div><h2>Explore restaurants</h2><p>Browse demo listings inspired by food discovery apps</p></div></div>
+ <div class="field"><label for="searchRestaurant">Search by restaurant or cuisine</label><input id="searchRestaurant" placeholder="Try: pizza, Indian, cafe..." oninput="renderRestaurants()"></div>
+ <div class="restaurant-grid" id="allRestaurants"></div>
+ <div class="callout">These are fictional sample listings for an academic demonstration. This website is not connected to Zomato, Swiggy or Toing.</div>
+</section>
+<section id="page-reviews" class="hidden">
+ <div class="section-head"><div><h2>Reviews & service feedback</h2><p>Submit a review and see its sentiment classification update instantly</p></div></div>
+ <div class="review-layout">
+  <div class="card"><h2 style="font-size:18px;margin:0">Share your experience</h2><p class="meta">Fields marked * are required</p>
+   <form id="reviewForm">
+    <div class="field"><label for="customerName">Your name *</label><input id="customerName" required maxlength="50" placeholder="e.g. Aditi"></div>
+    <div class="field"><label for="restaurantSelect">Restaurant *</label><select id="restaurantSelect" required></select></div>
+    <div class="field"><label for="categorySelect">Experience area *</label><select id="categorySelect"><option>Food</option><option>Delivery</option><option>Staff service</option><option>Ambience</option><option>Pricing</option></select></div>
+    <div class="field"><label>Your rating *</label><div class="stars" id="starPicker" aria-label="Choose rating"><button type="button" data-star="1">★</button><button type="button" data-star="2">★</button><button type="button" data-star="3">★</button><button type="button" data-star="4">★</button><button type="button" data-star="5">★</button></div><span class="meta" id="starLabel">Select 1–5 stars</span></div>
+    <div class="field"><label for="reviewText">Your review *</label><textarea id="reviewText" required minlength="3" maxlength="500" placeholder="Tell us what went well or what needs improvement..."></textarea></div>
+    <button class="btn primary" type="submit" style="width:100%">Analyse & submit review</button>
+   </form>
+   <div class="callout">Sentiment is estimated using simple keyword rules for demonstration, not a trained AI model.</div>
+  </div>
+  <div class="card"><div class="section-head" style="margin:0 0 10px"><div><h2>Recent customer reviews</h2><p>Newest feedback appears first</p></div><span class="tag" id="reviewTag">All reviews</span></div><div id="reviewList"></div></div>
+ </div>
+</section>
+<section id="page-planning" class="hidden">
+ <div class="section-head"><div><h2>ITPM · ES · ASTMA</h2><p>How the three subjects work together in this project</p></div></div>
+ <div class="grid2">
+  <div class="card"><h2 style="font-size:18px">ITPM — Project management</h2><p class="meta">Scope, milestones, risks and delivery tracking</p><div class="sentiment-list">
+   <div><b>Milestone 1 — Requirements</b><div class="track" style="margin-top:7px"><div class="fill positive" style="width:100%"></div></div><span class="meta">Completed · Define users, features and objectives</span></div>
+   <div><b>Milestone 2 — Prototype</b><div class="track" style="margin-top:7px"><div class="fill positive" style="width:100%"></div></div><span class="meta">Completed · Responsive interface and demo data</span></div>
+   <div><b>Milestone 3 — Testing & deployment</b><div class="track" style="margin-top:7px"><div class="fill neutral" style="width:65%"></div></div><span class="meta">In progress · Mobile checks and hosting</span></div>
+  </div></div>
+  <div class="card"><h2 style="font-size:18px">ES — Enterprise Systems</h2><p class="meta">Data and management decision support</p><ul style="padding-left:19px;line-height:1.9;font-size:14px"><li>Customer and restaurant records</li><li>Review and service-category tracking</li><li>Rating and sentiment KPIs</li><li>Complaint prioritisation</li><li>Recommendations for service improvement</li></ul><h2 style="font-size:18px;margin-top:24px">ASTMA — Social & media analytics</h2><p style="font-size:14px;line-height:1.7">Review text is classified as positive, neutral or negative using transparent keyword rules. Aggregate sentiment and rating patterns help identify recurring service issues.</p></div>
+ </div>
+ <div class="card" style="margin-top:16px"><h2 style="font-size:18px">Example decision-support report</h2><p style="line-height:1.7;font-size:14px">If negative feedback frequently mentions “late”, “cold” or “delay”, management should review delivery preparation and dispatch time. If positive feedback mentions “delicious” or “fresh”, preserve food quality practices. Review categories can help decide which operational area needs attention first.</p><div class="callout"><b>Project limitation:</b> Current version is a front-end academic prototype using sample data and browser-local storage. It does not connect to real restaurant platforms, payments, or a shared enterprise database.</div></div>
+</section>
+<div class="footer">ServeSense Academic Prototype · ITPM + Enterprise Systems + ASTMA · Sample data for demonstration</div>
+</main>
+<script>
+const restaurants=[
+ {id:1,name:"Spice Route Kitchen",cuisine:"North Indian · Mughlai",rating:4.5,price:"₹₹",emoji:"🍛",area:"Mumbai"},
+ {id:2,name:"Green Bowl Cafe",cuisine:"Healthy · Salads · Cafe",rating:4.2,price:"₹₹",emoji:"🥗",area:"Mumbai"},
+ {id:3,name:"The Urban Slice",cuisine:"Pizza · Italian",rating:4.4,price:"₹₹",emoji:"🍕",area:"Mumbai"},
+ {id:4,name:"Dosa & Co.",cuisine:"South Indian",rating:4.1,price:"₹",emoji:"🥞",area:"Mumbai"},
+ {id:5,name:"Wok This Way",cuisine:"Chinese · Asian",rating:4.0,price:"₹₹",emoji:"🍜",area:"Mumbai"},
+ {id:6,name:"Sweet Crumbs",cuisine:"Bakery · Desserts",rating:4.6,price:"₹₹",emoji:"🧁",area:"Mumbai"}
+];
+const seedReviews=[
+ {id:101,name:"Riya",restaurant:"Spice Route Kitchen",category:"Food",rating:5,text:"Delicious food and fresh ingredients. Staff was friendly and service was excellent.",sentiment:"positive",date:"Demo sample"},
+ {id:102,name:"Aman",restaurant:"Green Bowl Cafe",category:"Staff service",rating:4,text:"Fresh salad and good quality. Friendly staff, would visit again.",sentiment:"positive",date:"Demo sample"},
+ {id:103,name:"Neha",restaurant:"The Urban Slice",category:"Delivery",rating:2,text:"Pizza arrived cold and delivery was late. Very slow service.",sentiment:"negative",date:"Demo sample"},
+ {id:104,name:"Kabir",restaurant:"Dosa & Co.",category:"Pricing",rating:3,text:"Food was okay. Price is average and the wait was normal.",sentiment:"neutral",date:"Demo sample"},
+ {id:105,name:"Sara",restaurant:"Wok This Way",category:"Food",rating:2,text:"Taste was bad and order was delayed. Not happy with the service.",sentiment:"negative",date:"Demo sample"},
+ {id:106,name:"Dev",restaurant:"Sweet Crumbs",category:"Food",rating:5,text:"Amazing cake, fresh and delicious. Great experience.",sentiment:"positive",date:"Demo sample"},
+ {id:107,name:"Mira",restaurant:"Spice Route Kitchen",category:"Ambience",rating:4,text:"Nice ambience and tasty meal. Service was good.",sentiment:"positive",date:"Demo sample"},
+ {id:108,name:"Ishaan",restaurant:"The Urban Slice",category:"Pricing",rating:3,text:"Food was okay but a little expensive.",sentiment:"neutral",date:"Demo sample"}
+];
+let chosenRating=0;
+let userReviews=[];
+try{userReviews=JSON.parse(localStorage.getItem("servesenseReviews")||"[]")}catch(e){userReviews=[]}
+const allReviews=()=>[...userReviews,...seedReviews];
+const classify=text=>{
+ const t=text.toLowerCase();
+ const pos=["delicious","fresh","excellent","friendly","great","amazing","good","love","tasty","fast","helpful","wonderful","perfect","clean","best","polite","quick","nice"];
+ const neg=["bad","cold","late","delay","delayed","slow","rude","dirty","worst","poor","stale","overpriced","expensive","terrible","unhappy","not happy","disappointed","wrong","never"];
+ let score=0;pos.forEach(w=>{if(t.includes(w))score++});neg.forEach(w=>{if(t.includes(w))score--});
+ return score>0?"positive":score<0?"negative":"neutral";
+};
+const sentimentLabel=s=>s==="positive"?"Positive":s==="negative"?"Negative":"Neutral";
+function goPage(page){document.querySelectorAll("[id^='page-']").forEach(e=>e.classList.add("hidden"));document.getElementById("page-"+page).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"});if(page==="restaurants")renderRestaurants();if(page==="reviews")renderReviews()}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>goPage(b.dataset.page)));
+function restaurantCard(r){return `<article class="card restaurant"><div class="foodphoto">${r.emoji}</div><div class="body"><h3>${r.name}</h3><div class="meta">${r.cuisine}</div><div class="restrow"><span class="rating">★ ${r.rating.toFixed(1)}</span><span class="meta">${r.price} · ${r.area}</span></div><div class="restrow"><button class="btn light" onclick="reviewThis('${r.name.replace(/'/g,"\\'")}')">Write review</button><span class="meta">Demo listing</span></div></div></article>`}
+function renderRestaurants(){const q=(document.getElementById("searchRestaurant")?.value||"").toLowerCase();document.getElementById("allRestaurants").innerHTML=restaurants.filter(r=>(r.name+" "+r.cuisine).toLowerCase().includes(q)).map(restaurantCard).join("")||'<div class="empty">No restaurants found. Try another search.</div>';document.getElementById("featuredRestaurants").innerHTML=restaurants.slice(0,3).map(restaurantCard).join("");document.getElementById("restaurantSelect").innerHTML=restaurants.map(r=>`<option>${r.name}</option>`).join("")}
+function reviewThis(name){goPage("reviews");document.getElementById("restaurantSelect").value=name}
+function renderReviews(){const list=allReviews();document.getElementById("reviewTag").textContent=list.length+" reviews";document.getElementById("reviewList").innerHTML=list.map(r=>`<div class="review-item"><div class="review-top"><strong>${escapeHtml(r.name)} · ${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</strong><span class="pill ${r.sentiment}">${sentimentLabel(r.sentiment)}</span></div><p>${escapeHtml(r.text)}</p><div class="review-meta">${escapeHtml(r.restaurant)} · ${escapeHtml(r.category)} · ${r.date}</div></div>`).join("")}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderDashboard(){
+ const list=allReviews();const avg=restaurants.reduce((a,r)=>a+r.rating,0)/restaurants.length;
+ const pos=list.filter(r=>r.sentiment==="positive").length,neg=list.filter(r=>r.sentiment==="negative").length,neu=list.length-pos-neg;
+ document.getElementById("avgRating").textContent=avg.toFixed(1)+" ★";
+ document.getElementById("reviewCount").textContent=128+userReviews.length;
+ document.getElementById("heroCount").textContent=128+userReviews.length;
+ document.getElementById("positivePct").textContent=Math.round(pos/list.length*100)+"%";
+ document.getElementById("complaintCount").textContent=8+userReviews.filter(r=>r.sentiment==="negative").length;
+ document.getElementById("ratingChart").innerHTML=restaurants.slice(0,5).map(r=>`<div class="barwrap"><b>${r.rating.toFixed(1)}</b><div class="bar" style="height:${r.rating/5*100}%"></div><span>${r.name.split(" ")[0]}</span></div>`).join("");
+ const total=list.length||1;document.getElementById("sentimentBars").innerHTML=[["Positive",pos,"positive"],["Neutral",neu,"neutral"],["Negative",neg,"negative"]].map(([name,n,cls])=>`<div class="sent-row"><span>${name}</span><div class="track"><div class="fill ${cls}" style="width:${n/total*100}%"></div></div><b>${Math.round(n/total*100)}%</b></div>`).join("");
+ renderRestaurants();renderReviews();
+}
+document.querySelectorAll("[data-star]").forEach(b=>b.addEventListener("click",()=>{chosenRating=Number(b.dataset.star);document.querySelectorAll("[data-star]").forEach(x=>x.classList.toggle("chosen",Number(x.dataset.star)<=chosenRating));document.getElementById("starLabel").textContent=chosenRating+" out of 5 stars"}));
+document.getElementById("reviewForm").addEventListener("submit",e=>{
+ e.preventDefault();if(!chosenRating){alert("Please choose a star rating.");return}
+ const text=document.getElementById("reviewText").value.trim();
+ const item={id:Date.now(),name:document.getElementById("customerName").value.trim(),restaurant:document.getElementById("restaurantSelect").value,category:document.getElementById("categorySelect").value,rating:chosenRating,text,sentiment:classify(text),date:new Date().toLocaleDateString()};
+ userReviews.unshift(item);
+ try{localStorage.setItem("servesenseReviews",JSON.stringify(userReviews))}catch(err){}
+ e.target.reset();chosenRating=0;document.querySelectorAll("[data-star]").forEach(x=>x.classList.remove("chosen"));document.getElementById("starLabel").textContent="Select 1–5 stars";
+ renderDashboard();renderReviews();alert("Review submitted! Sentiment: "+sentimentLabel(item.sentiment)+". Dashboard updated.");goPage("reviews");
+});
+renderDashboard();
+</script>
+</body>
+</html>
